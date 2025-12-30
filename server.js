@@ -29,10 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ============================================
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '2004',
-  database: 'smart_stock_system',
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  port: process.env.MYSQL_PORT,
   waitForConnections: true,
   connectionLimit: 10
 });
@@ -249,3 +250,4 @@ server.listen(PORT, () => {
 ╚══════════════════════════════════════╝
 `);
 });
+
