@@ -240,14 +240,11 @@ app.get('/api/stats', async (_, res) => {
 // SERVER START
 // ============================================
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
-  console.log(`
-╔══════════════════════════════════════╗
-║  🚀 Smart Stock Server Running       ║
-║  🌐 http://localhost:${PORT}          ║
-╚══════════════════════════════════════╝
-`);
+  console.log(`🚀 Smart Stock Server Running on port ${PORT}`);
 });
+
+
 
